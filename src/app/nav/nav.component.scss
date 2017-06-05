@@ -1,0 +1,20 @@
+    .navbar-brand img {
+        display: block;
+        width: auto;
+        height: 100%;
+    }
+    
+    .navbar-inverse .navbar-nav>li.active>a {
+        color: #ffffff;
+        background-color: rgba(229, 0, 0, 0.71);
+        border: 1px solid black;
+    }
+    
+    .navbar-inverse .navbar-nav>li>a:hover {
+        color: rgba(229, 0, 0, 0.71);
+    }
+    
+    .navbar-inverse .navbar-nav>li.active>a:hover {
+        color: #ffffff;
+        font-weight: bold;
+    }

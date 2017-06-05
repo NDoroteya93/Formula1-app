@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="row">
+        <div class="container">
+            <div class="row" *ngIf='driversList === undefined || driversList.length == 0'>
+                <div class="col-lg-12">
+                    <div>
+                        <div class="col-md-4" *ngFor='let driver of driversList; let i= index'>
+                            <div class="profile-driver text-center">
+                                <img class="img-responsive" src="https://images.unsplash.com/photo-1454678904372-2ca94103eca4?crop=entropy&fit=crop&fm=jpg&h=975&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=1925">
+                                <div class="profile-info">
+
+                                    <img class="profile-pic" src="https://pbs.twimg.com/profile_images/711000557742395396/jzm8hqwW.jpg">
+
+                                    <h2 class="hvr-underline-from-center">Rod<span>Digital / Design Consultant</span></h2>
+                                    <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt. Lorem ipsum dolor sit amet, consectetur
+                                        adipiscing elit.</div>
+                                    <a href="http://www.twitter.com/mike_youngg"><i class="fa fa-twitter fa-2x"></i></a>
+                                    <a href="mailto:michael_y@live.co.uk"><i class="fa fa-envelope-o fa-2x"></i></a>
+                                    <a href="http://www.linkedin.com"><i class="fa fa-linkedin fa-2x"></i></a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
