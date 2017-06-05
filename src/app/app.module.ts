@@ -12,7 +12,7 @@ import { CircuitsComponent } from './circuits/circuits.component';
 import { ConstructorsComponent } from './constructors/constructors.component';
 
 // Service
-import {FormulaService} from './core/service/formula.service';
+import {FormulaService} from './core/services/formula.service';
 
 @NgModule({
   declarations: [
@@ -28,9 +28,7 @@ import {FormulaService} from './core/service/formula.service';
     HttpModule,
     AppRoutingModule
   ],
-  providers: [
-    FormulaService
-  ],
+  providers: [ FormulaService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
         <div class="container">
-            <div class="row" *ngIf='driversList === undefined || driversList.length == 0'>
+            <div class="row" *ngIf='driversList?.length > 0'>
                 <div class="col-lg-12">
                     <div>
                         <div class="col-md-4" *ngFor='let driver of driversList; let i= index'>
