@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+import { CircuitsService } from '../core/service/circuits.service';
+import { IConstructor } from '../core/entities/constructorsList';
+
 @Component({
   selector: 'app-circuits',
   templateUrl: './circuits.component.html',
@@ -7,9 +10,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CircuitsComponent implements OnInit {
 
-  constructor() { }
+ circuitsList: any;
 
+  constructor(private circuitsService: CircuitsService) { }
   ngOnInit() {
+      return this.circuitsService.getCircuits()
+            .subscribe(data => this.circuitsList = data,
+            err => console.log(err));
   }
 
 }

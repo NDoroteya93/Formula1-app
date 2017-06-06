@@ -1,7 +1,7 @@
-import { Http, Response, RequestOptions, URLSearchParams, Jsonp } from '@angular/http';
+import { Http, Response, RequestOptions, URLSearchParams } from '@angular/http';
 import { Injectable, Inject } from '@angular/core';
-import { DRIVERS_URL, CIRCUITS_URL, CONSTRUCTORS_URL, DETAILS_URL, BASE_URL } from '../app-constants';
-import { IDrivers } from '../entities/driversList';
+import { DRIVERS_URL,BASE_URL } from '../app-constants';
+import { IDrivers, IDriverStandings } from '../entities/driversList';
 
 import { Observable } from 'rxjs/Rx';
 
@@ -14,19 +14,14 @@ export class FormulaService {
     private params: URLSearchParams;
     private _JSON: any;
 
-    constructor(private jsonp: Jsonp, private http: Http) {
+    constructor(private http: Http) {
         this.params = new URLSearchParams();
         this._JSON = JSON;
     }
-    // getDrivers(): Observable<IDrivers[]> {
-    //     return this.http.get(DRIVERS_URL)
-    //         .map(response => <IDrivers[]>response.json())
-    //         .catch(this.handleError);
-    // }
 
-    getDrivers(): Observable<IDrivers[]> {
+    getDrivers(): Observable<IDriverStandings[]> {
         return this.http.get(DRIVERS_URL)
-            .map(response => <IDrivers[]>response.json().MRData.StandingsTable.StandingsLists[0].DriverStandings);
+            .map(response => <IDriverStandings[]>response.json().MRData.StandingsTable.StandingsLists[0].DriverStandings);
     }
 
     private handleError(error: Response) {

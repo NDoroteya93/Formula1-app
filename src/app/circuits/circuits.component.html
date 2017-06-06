@@ -1,3 +1,25 @@
-<p>
-  circuits works!
-</p>
+<div class="container">
+    <div class="row">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12" *ngIf='circuitsList?.length > 0'>
+                    <div>
+                        <div class="col-md-4" *ngFor='let circuit of circuitsList; let i= index'>
+                            <div class="profile-circuit text-center">
+                                <img class="img-responsive" src="../../assets/img/circuits/{{circuit.circuitId}}.png">
+                                <div class="profile-info">
+                                    <h4 class="hvr-underline-from-center">{{circuit.circuitName}}</h4>
+                                    <div>
+                                        <p>Locality: <span>{{circuit.Location.locality}} {{circuit.Location.country}}</span></p>
+                                    </div>
+                                    <a href="{{circuit.url}}" target="_blank"><i class="fa fa-wikipedia-w fa-2x"></i></a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
