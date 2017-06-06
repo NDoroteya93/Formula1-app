@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, ViewContainerRef, EventEmitter } from '@angular/core';
-import { FormulaService } from '../core/services/formula.service';
-import { IDrivers } from '../core/entities/driversList';
+import { FormulaService } from '../core/service/formula.service';
+import { IDrivers, IDriverStandings } from '../core/entities/driversList';
 
 @Component({
     selector: 'app-drivers',
@@ -11,21 +11,15 @@ import { IDrivers } from '../core/entities/driversList';
 })
 export class DriversComponent implements OnInit {
 
-    driversList: IDrivers[] = new Array();
+    driversList: IDriverStandings[] = new Array();
     constructor(private formulaService: FormulaService) {
 
     }
 
     ngOnInit() {
-        let self: any;
-        let list = this.formulaService.getDrivers()
-
-            .subscribe(data => {
-                this.driversList = data
-            },
+        return this.formulaService.getDrivers()
+            .subscribe(data => this.driversList = data,
             err => console.log(err));
-
-        console.log(this.driversList);
     }
 
 }

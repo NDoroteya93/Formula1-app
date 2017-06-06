@@ -1,3 +1,25 @@
-<p>
-  constructors works!
-</p>
+<div class="container">
+    <div class="row">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12" *ngIf='constructorList?.length > 0'>
+                    <div>
+                        <div class="col-md-4" *ngFor='let constructor of constructorList; let i= index'>
+                            <div class="profile-constructor text-center">
+                                <img class="img-responsive" src="../../assets/img/constructors/{{constructor.constructorId}}.png">
+                                <div class="profile-info">
+                                    <h3 class="hvr-underline-from-center">{{constructor.name}}</h3>
+                                    <div>
+                                        <p>Nationality: <span>{{constructor.nationality}}</span></p>
+                                    </div>
+                                    <a href="{{constructor.url}}" target="_blank"><i class="fa fa-wikipedia-w fa-2x"></i></a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
