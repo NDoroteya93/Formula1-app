@@ -10,11 +10,14 @@ import { NavComponent } from './nav/nav.component';
 import { DriversComponent } from './drivers/drivers.component';
 import { CircuitsComponent } from './circuits/circuits.component';
 import { ConstructorsComponent } from './constructors/constructors.component';
+import { DriverDetailsComponent } from './driver-details/driver-details.component';
 
-// Service
-import {FormulaService} from './core/service/formula.service';
+// Services
+import { FormulaService } from './core/service/formula.service';
 import { ConstructorsService } from './core/service/constructors.service';
 import { CircuitsService } from './core/service/circuits.service';
+import { DriverService } from './core/service/driver.service';
+import { LocalStorageService } from './core/service/local-storage.service';
 
 @NgModule({
   declarations: [
@@ -22,19 +25,24 @@ import { CircuitsService } from './core/service/circuits.service';
     NavComponent,
     DriversComponent,
     CircuitsComponent,
-    ConstructorsComponent
+    ConstructorsComponent,
+    DriverDetailsComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     AppRoutingModule
+
   ],
-  providers: [  
-    FormulaService, 
+  providers: [
+    FormulaService,
     ConstructorsService,
-    CircuitsService
+    CircuitsService,
+    DriverService,
+    LocalStorageService
   ],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }

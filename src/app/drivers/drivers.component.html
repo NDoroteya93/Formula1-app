@@ -11,7 +11,7 @@
                                         <img class="profile-pic" src="../../assets/img/drivers/{{driver.Driver.driverId}}.png">
                                     </div>
 
-                                    <h3 class="hvr-underline-from-center"> {{driver.Driver.givenName}} {{driver.Driver.familyName}}<span>{{driver.Constructors[0].name}}</span></h3>
+                                    <h3 (click)="onSelect(driver)" class="hvr-underline-from-center"> {{driver.Driver.givenName}} {{driver.Driver.familyName}}<span>{{driver.Constructors[0].name}}</span></h3>
                                     <div class="profile-content">
                                         <p>Nationality: <span><img class="nationality-pic" src="../../assets/img/flags/{{driver.Driver.nationality}}.png"></span></p>
                                         <p>Position: <span>{{driver.position}}</span></p>
