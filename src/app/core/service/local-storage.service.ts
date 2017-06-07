@@ -1,21 +1,21 @@
-
-
 import { Injectable } from '@angular/core';
 
 @Injectable()
 export class LocalStorageService {
 
   save(name, data) {
-    debugger;
+
     let localData: any = localStorage.getItem('drivers');
     if (localData) {
       localData = JSON.parse(localData);
     } else {
       localData = {};
+      localData[name]= new Array(5);
     }
 
-    // localData[name] = new Array();
-
+    if(localData[name].length >= 5){ 
+      localData[name].shift();
+    }
     localData[name].push(data);
 
     localStorage.setItem('drivers', JSON.stringify(localData))

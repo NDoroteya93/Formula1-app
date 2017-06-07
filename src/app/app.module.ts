@@ -18,6 +18,7 @@ import { ConstructorsService } from './core/service/constructors.service';
 import { CircuitsService } from './core/service/circuits.service';
 import { DriverService } from './core/service/driver.service';
 import { LocalStorageService } from './core/service/local-storage.service';
+import { LoaderScreenComponent } from './loader-screen/loader-screen.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { LocalStorageService } from './core/service/local-storage.service';
     DriversComponent,
     CircuitsComponent,
     ConstructorsComponent,
-    DriverDetailsComponent
+    DriverDetailsComponent,
+    LoaderScreenComponent
   ],
   imports: [
     BrowserModule,

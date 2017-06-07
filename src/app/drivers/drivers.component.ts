@@ -21,9 +21,11 @@ export class DriversComponent implements OnInit {
 
     driversList: IDriverStandings[] = new Array();
 
-    constructor(private formulaService: FormulaService, private route: ActivatedRoute, private router: Router, private storageService: LocalStorageService) {
-
-    }
+    constructor(
+        private formulaService: FormulaService,
+        private route: ActivatedRoute, private router: Router,
+        private storageService: LocalStorageService
+        ) { }
 
     ngOnInit() {
         return this.formulaService.getDrivers()
@@ -32,9 +34,8 @@ export class DriversComponent implements OnInit {
     }
 
     onSelect(driver) {
-
         this.storageService.save('drivers', driver)
-        this.storageService.get('drivers');
+
         let name = driver.Driver.givenName + " " + driver.Driver.familyName;
         this.router.navigate(['driver-details', name]);
     }
