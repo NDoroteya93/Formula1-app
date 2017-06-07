@@ -25,7 +25,7 @@ export class DriversComponent implements OnInit {
         private formulaService: FormulaService,
         private route: ActivatedRoute, private router: Router,
         private storageService: LocalStorageService
-        ) { }
+    ) { }
 
     ngOnInit() {
         return this.formulaService.getDrivers()
@@ -39,5 +39,6 @@ export class DriversComponent implements OnInit {
         let name = driver.Driver.givenName + " " + driver.Driver.familyName;
         this.router.navigate(['driver-details', name]);
     }
+
 
 }
